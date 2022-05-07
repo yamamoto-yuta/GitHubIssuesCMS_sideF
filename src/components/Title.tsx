@@ -20,7 +20,7 @@ export const TopTitle = ({ profile }: { profile: ProfileJson }) => {
       component="a"
       display="inline"
       color="inherit"
-      href="/"
+      href="/GitHubIssuesCMS_sideF"
       sx={{ textDecoration: 'none', boxShadow: 'none' }}
     >
       {title}
