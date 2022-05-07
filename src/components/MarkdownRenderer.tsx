@@ -227,8 +227,6 @@ const Paragraph: Components['p'] = ({ node, ...props }) => {
   }
   if (
     node.children.length === 0 &&
-    node.tagName === 'p' &&
-    node.type === 'element' &&
     typeof node.properties?.basePath === 'string' &&
     typeof node.properties?.slug === 'string'
   ) {
@@ -238,7 +236,7 @@ const Paragraph: Components['p'] = ({ node, ...props }) => {
     console.log(slug, basePath)
     return <PostCardBySlug slug={slug} url_subpath={basePath}/>
   }
-  console.log('失敗', node)
+  console.log('失敗', typeof node.properties?.basePath)
   return <Typography {...props} variant="body1" component="div" />
 }
 
