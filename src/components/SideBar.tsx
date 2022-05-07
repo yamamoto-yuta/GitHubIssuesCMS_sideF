@@ -1,4 +1,5 @@
 import * as React from 'react'
+import Link from 'next/link'
 import {
   Box,
   Divider,
@@ -82,16 +83,16 @@ export default function SideBar({
           />
         </ListItem>
         <Divider />
-        <ListItemButton text="Home" href='/'>
+        <ListItemButton text="Home" href='/GitHubIssuesCMS_sideF'>
           <HomeIcon />
         </ListItemButton>
-        <ListItemButton text="Articles" href="/GitHubIssuesCMS_sideF/article/list">
+        <ListItemButton text="Articles" href='/GitHubIssuesCMS_sideF/article/list'>
           <ArticleIcon />
         </ListItemButton>
-        <ListItemButton text="Tags" href='/article/tags'>
+        <ListItemButton text="Tags" href='/GitHubIssuesCMS_sideF/article/tags'>
           <LocalOfferIcon />
         </ListItemButton>
-        <ListItemButton text="Works" href='/works'>
+        <ListItemButton text="Works" href='/GitHubIssuesCMS_sideF/works'>
           <InterestsIcon />
         </ListItemButton>
         <ListItemButton text="Edit page" href={edit_page_url}>
@@ -144,10 +145,12 @@ const ListItemButton = ({
     href?.includes('shotarokataoka.github.io')
   ) {
     return (
-      <ListItem button component="a" key={text} href={href}>
-        <ListItemIcon>{children}</ListItemIcon>
-        <ListItemText primary={text} />
-      </ListItem>
+      <Link href={href} passHref>
+        <ListItem button>
+          <ListItemIcon>{children}</ListItemIcon>
+          <ListItemText primary={text} />
+        </ListItem>
+      </Link>
     )
   }
   return (
