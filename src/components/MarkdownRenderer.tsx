@@ -232,10 +232,13 @@ const Paragraph: Components['p'] = ({ node, ...props }) => {
     typeof node.properties?.basePath === 'string' &&
     typeof node.properties?.slug === 'string'
   ) {
+    console.log(node)
     const slug = node.properties.slug
     const basePath = node.properties.basePath
+    console.log(slug, basePath)
     return <PostCardBySlug slug={slug} url_subpath={basePath}/>
   }
+  console.log('失敗', node)
   return <Typography {...props} variant="body1" component="div" />
 }
 
