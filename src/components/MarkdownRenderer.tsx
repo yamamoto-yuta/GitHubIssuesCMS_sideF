@@ -31,6 +31,7 @@ import rehypeRaw from 'rehype-raw'
 import remarkMath from 'remark-math'
 import remarkHtmlKatex from 'remark-html-katex'
 import theme from '../src/theme'
+import { PostCardBySlug } from './PostCard'
 
 type Props = { children: string }
 
@@ -214,7 +215,6 @@ const MdCode: Components['code'] = ({ node, ...props }) => {
 
 const Paragraph: Components['p'] = ({ node, ...props }) => {
   const child = node.children[0]
-  console.log(node)
   if (
     node.children.length === 1 &&
     child.type === 'element' &&
@@ -224,6 +224,17 @@ const Paragraph: Components['p'] = ({ node, ...props }) => {
     child.properties.href === child.children[0].value
   ) {
     return <EmbedLink url={child.properties.href} />
+  }
+  if (
+    node.children.length === 0 &&
+    node.tagName === 'p' &&
+    node.type === 'element' &&
+    typeof node.properties?.basePath === 'string' &&
+    typeof node.properties?.slug === 'string'
+  ) {
+    const slug = node.properties.slug
+    const basePath = node.properties.basePath
+    return <PostCardBySlug slug={slug} url_subpath={basePath}/>
   }
   return <Typography {...props} variant="body1" component="div" />
 }
