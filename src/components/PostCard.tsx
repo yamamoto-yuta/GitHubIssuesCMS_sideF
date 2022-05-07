@@ -11,7 +11,7 @@ import {
 import { TagButtons } from './TagButton'
 import { Post, Tag } from '../lib/api'
 import { getNow } from '../lib/datetime'
-import { PostsContext } from '../pages/_app'
+import { PostsContext, RootUrlContext } from '../pages/_app'
 import { useContext } from 'react'
 import Link from 'next/link'
 
@@ -30,7 +30,7 @@ export const PostCard = ({
   if (posted_at > now) {
     return <div />
   }
-  const basePath: string = '/GitHubIssuesCMS_sideF'
+  const { rootUrl, setRootUrl } = useContext(RootUrlContext)
   return (
     <Card variant="outlined" sx={{ width: '98%', mt: '0.8rem', mb: '0.8rem', p: 0 }}>
       <Link href={`/article/${slug}`} passHref>
@@ -38,7 +38,7 @@ export const PostCard = ({
         sx={{ width: '100%', textTransform: 'none', pt: 0, pb: 0, pl: 0, pr: 0 }}
       >
         <Box sx={{pt: 0, pb: 0, pr: 0, width: '100%', pl: 0}}>
-          <CardMedia component='img' image={`${basePath}/static/images/thumbnail/${slug}.jpg`} alt="thumbnail"/>
+          <CardMedia component='img' image={`${rootUrl.url_subpath}/static/images/thumbnail/${slug}.jpg`} alt="thumbnail"/>
           <Box sx={{pr: '1.4rem', pl: '1.4rem'}}>
           <Typography
             gutterBottom
