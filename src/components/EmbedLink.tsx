@@ -1,7 +1,6 @@
 import { Link } from '@mui/material'
 import { TwitterTweetEmbed } from 'react-twitter-embed'
 import { CardLink } from './CardLink'
-import { PostCardBySlug } from './PostCard'
 
 export const EmbedLink = ({ url }: { url: string }) => {
   if (
@@ -15,25 +14,12 @@ export const EmbedLink = ({ url }: { url: string }) => {
     /https:\/\/www\.youtube\.com\/watch\?v=[\w\d_]+[\S]*/.test(url)
   ) {
     return <YoutubeEmbed url={url} />
-  } else if (
-    /https?:\/\/shotarokataoka\.github\.io\/article\/\d+\/?[\S]*/.test(url)
-  ) {
-    return <PostCardEmbed url={url} />
   } else {
     // Other Links
     return (
       <CardLink url={url} />
-      // <Link href={url} target="_blank" rel="noopener"/>
     )
   }
-}
-
-const PostCardEmbed = ({ url }: { url: string }) => {
-  let match = /https?:\/\/shotarokataoka\.github\.io\/article\/(\d+)/g.exec(url)
-  if (match != null) {
-    return <PostCardBySlug slug={match[1]} url_subpath={''}/>
-  }
-  return <div />
 }
 
 const TweetEmbed = ({ url }: { url: string }) => {
@@ -46,7 +32,6 @@ const TweetEmbed = ({ url }: { url: string }) => {
 }
 
 const YoutubeEmbed = ({ url }: { url: string }) => {
-  // const youtubeId = url.split('/').pop()
   const embed = (youtubeId: string) => {
     return (
       <div

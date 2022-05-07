@@ -81,8 +81,7 @@ export const MarkdownRenderer: React.VFC<Props> = ({ children }) => {
 const MdLink: Components['a'] = ({ node, href, ...props }) => {
   if (
     href?.startsWith('#') ||
-    href?.startsWith('/') ||
-    href?.includes('shotarokataoka.github.io')
+    href?.startsWith('/')
   ) {
     return <Link {...props} href={href} />
   }
