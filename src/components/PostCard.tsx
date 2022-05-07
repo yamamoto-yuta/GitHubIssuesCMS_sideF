@@ -13,6 +13,7 @@ import { Post, Tag } from '../lib/api'
 import { getNow } from '../lib/datetime'
 import { PostsContext } from '../pages/_app'
 import { useContext } from 'react'
+import Link from 'next/link'
 
 export const PostCard = ({
   slug,
@@ -31,8 +32,8 @@ export const PostCard = ({
   }
   return (
     <Card variant="outlined" sx={{ width: '98%', mt: '0.8rem', mb: '0.8rem', p: 0 }}>
+      <Link href={`/article/${slug}`} passHref>
       <Button
-        href={'/article/'.concat(slug)}
         sx={{ width: '100%', textTransform: 'none', pt: 0, pb: 0, pl: 0, pr: 0 }}
       >
         <Box sx={{pt: 0, pb: 0, pr: 0, width: '100%', pl: 0}}>
@@ -58,6 +59,7 @@ export const PostCard = ({
           </Box>
           </Box>
       </Button>
+      </Link>
       <Container>
         <TagButtons tags={tags} sx={{ m: 0, pb: 0.5, pt: 0.5 }} />
       </Container>
