@@ -30,5 +30,8 @@
             "name": "YouTube",
             "url": "https://"
         }
-    ]
+    ],
+    "url_scheme": "https",
+    "url_domain": "shotarokataoka.github.io",
+    "url_subpath": "/GitHubIssuesCMS_sideF/"
 }
