@@ -34,10 +34,6 @@ export default function TagsPosts({
 }) {
   const title: string = `tag="${tag_name}"`
 
-  const { setRootUrl } = useContext(RootUrlContext)
-  const rootUrl: RootUrl = {root_url: profile.root_url, url_scheme: profile.url_scheme, url_domain: profile.url_domain, url_subpath: profile.url_subpath}
-  setRootUrl(rootUrl)
-
   // Pagenation
   const [page, setPage] = useState(1)
   
@@ -88,7 +84,7 @@ export default function TagsPosts({
                   posts={posts}
                   page={page}
                   postNumPerPage={postNumPerPage}
-                  year={year}
+                  url_subpath={profile.url_subpath}
                 />
                 <CustomPagination
                   pageNum={pageNum}

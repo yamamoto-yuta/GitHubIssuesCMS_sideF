@@ -27,10 +27,6 @@ const List: NextPage<Props> = ({
 }) => {
   const [page, setPage] = useState(1)
 
-  const { setRootUrl } = useContext(RootUrlContext)
-  const rootUrl: RootUrl = {root_url: profile.root_url, url_scheme: profile.url_scheme, url_domain: profile.url_domain, url_subpath: profile.url_subpath}
-  setRootUrl(rootUrl)
-
   const [year, setYear] = useState('all');
   const handleChange = (event: SelectChangeEvent) => {
     setYear(event.target.value as string);
@@ -77,7 +73,7 @@ const List: NextPage<Props> = ({
                   posts={posts}
                   page={page}
                   postNumPerPage={postNumPerPage}
-                  year={year}
+                  url_subpath={profile.url_subpath}
                 />
                 <CustomPagination
                   pageNum={pageNum}

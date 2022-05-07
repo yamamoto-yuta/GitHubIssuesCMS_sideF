@@ -141,7 +141,7 @@ const Post: NextPage<Props> = ({
                       関連記事
                   </Typography>
                 </Divider>
-                <PostCards posts={relatedPosts} page={1} postNumPerPage={10}/>
+                <PostCards posts={relatedPosts} page={1} postNumPerPage={10} url_subpath={profile.url_subpath}/>
               </div>
               {/* <DisqusComments post={post}/> */}
             </article>

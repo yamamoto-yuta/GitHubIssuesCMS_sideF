@@ -20,13 +20,14 @@ export const PostCard = ({
   title,
   tags,
   posted_at,
+  url_subpath,
 }: {
   slug: string
   title: string
   tags: Tag[]
   posted_at: string
+  url_subpath: string
 }) => {
-  const { rootUrl, setRootUrl } = useContext(RootUrlContext)
   const now: string = getNow()
   if (posted_at > now) {
     return <div />
@@ -38,7 +39,7 @@ export const PostCard = ({
         sx={{ width: '100%', textTransform: 'none', pt: 0, pb: 0, pl: 0, pr: 0 }}
       >
         <Box sx={{pt: 0, pb: 0, pr: 0, width: '100%', pl: 0}}>
-          <CardMedia component='img' image={`${rootUrl.url_subpath}/static/images/thumbnail/${slug}.jpg`} alt="thumbnail"/>
+          <CardMedia component='img' image={`${url_subpath}/static/images/thumbnail/${slug}.jpg`} alt="thumbnail"/>
           <Box sx={{pr: '1.4rem', pl: '1.4rem'}}>
           <Typography
             gutterBottom
@@ -70,23 +71,24 @@ export const PostCard = ({
 
 export const PostCardBySlug = ({ slug }: { slug: string }) => {
   const { posts, setPosts } = useContext(PostsContext)
+  const { rootUrl, setRootUrl } = useContext(RootUrlContext)
   const post = posts[slug]
   if (post === null || post === undefined) {
     return <div />
   }
-  return <PostCard {...post} />
+  return <PostCard {...post} url_subpath={rootUrl.url_subpath} />
 }
 
 export const PostCards = ({
   posts,
   page,
   postNumPerPage,
-  year='all',
+  url_subpath,
 }: {
   posts: Post[]
   page: number
   postNumPerPage: number
-  year?: string
+  url_subpath: string
 }) => {
   const pageStartPost: number = (page - 1) * postNumPerPage
   const pageEndPost: number = (page - 1) * postNumPerPage + postNumPerPage
@@ -97,7 +99,7 @@ export const PostCards = ({
         .map((post: Post) => {
           return (
             <Grid key={post.slug} item xs={12} sm={6}>
-              <PostCard {...post} />
+              <PostCard {...post} url_subpath={url_subpath}/>
             </Grid>
           )
         })}
