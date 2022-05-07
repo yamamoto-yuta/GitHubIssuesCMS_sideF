@@ -140,7 +140,7 @@ const Post: NextPage<Props> = ({
                 </Divider>
                 <PostCards posts={relatedPosts} page={1} postNumPerPage={10} url_subpath={profile.url_subpath}/>
               </div>
-              <DisqusComments post={post} root_url={profile.root_url} short_name={profile.author_name}/>
+              {/* <DisqusComments post={post} root_url={profile.root_url} short_name={profile.author_name}/> */}
             </article>
           </main>
           <footer>
