@@ -26,11 +26,11 @@ export const PostCard = ({
   tags: Tag[]
   posted_at: string
 }) => {
+  const { rootUrl, setRootUrl } = useContext(RootUrlContext)
   const now: string = getNow()
   if (posted_at > now) {
     return <div />
   }
-  const { rootUrl, setRootUrl } = useContext(RootUrlContext)
   return (
     <Card variant="outlined" sx={{ width: '98%', mt: '0.8rem', mb: '0.8rem', p: 0 }}>
       <Link href={`/article/${slug}`} passHref>
