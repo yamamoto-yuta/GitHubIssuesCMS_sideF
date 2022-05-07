@@ -214,6 +214,7 @@ const MdCode: Components['code'] = ({ node, ...props }) => {
 
 const Paragraph: Components['p'] = ({ node, ...props }) => {
   const child = node.children[0]
+  console.log(node)
   if (
     node.children.length === 1 &&
     child.type === 'element' &&

@@ -10,3 +10,4 @@ updated_at: 2022年05月07日 02時59分
 ## title
 content
 
+<postcard slug="2" basePath="GitHubIssuesCMS_sideF" />
