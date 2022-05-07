@@ -9,7 +9,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 const config = {
   reactStrictMode: true,
-  basePath: '/GitHubIssuesCMS_sideF',
 }
 
 module.exports = withBundleAnalyzer(config)

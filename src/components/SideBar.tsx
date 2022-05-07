@@ -85,7 +85,7 @@ export default function SideBar({
         <ListItemButton text="Home" href='/'>
           <HomeIcon />
         </ListItemButton>
-        <ListItemButton text="Articles" href='/article/list'>
+        <ListItemButton text="Articles" href='/GitHubIssuesCMS_sideF/article/list'>
           <ArticleIcon />
         </ListItemButton>
         <ListItemButton text="Tags" href='/article/tags'>
