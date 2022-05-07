@@ -6,7 +6,7 @@ import { CacheProvider, EmotionCache } from '@emotion/react'
 import theme from '../src/theme'
 import createEmotionCache from '../src/createEmotionCache'
 import React, { Dispatch, useState } from 'react'
-import { ExternalMetadata, Post, PostsMap } from '../lib/api'
+import { ExternalMetadata, getProfileJson, Post, PostsMap, ProfileJson } from '../lib/api'
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache()
@@ -43,11 +43,17 @@ export const RootUrlContext = React.createContext(
   },
 )
 
+const getRootUrl = () => {
+  const profile: ProfileJson = getProfileJson()
+  const initRootUrl: RootUrl = {root_url: profile.root_url, url_scheme: profile.url_scheme, url_domain: profile.url_domain, url_subpath: profile.url_subpath}
+  return initRootUrl
+}
+
 export default function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
   const initPosts: PostsMap = Object.create(null)
   const initMetadata: ExternalMetadata = Object.create(null)
-  const initRootUrl: RootUrl = {root_url: '', url_scheme: '', url_domain: '', url_subpath: ''}
+  const initRootUrl: RootUrl = getRootUrl()
   const [posts, setPosts] = useState(initPosts)
   const [metadata, setMetadata] = useState(initMetadata)
   const [rootUrl, setRootUrl] = useState(initRootUrl)

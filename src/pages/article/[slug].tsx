@@ -87,9 +87,6 @@ const Post: NextPage<Props> = ({
   setPosts(posts)
   const { setMetadata } = useContext(ExternalMetadataContext)
   setMetadata(metadata)
-  const { setRootUrl } = useContext(RootUrlContext)
-  const rootUrl: RootUrl = {root_url: profile.root_url, url_scheme: profile.url_scheme, url_domain: profile.url_domain, url_subpath: profile.url_subpath}
-  setRootUrl(rootUrl)
 
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
