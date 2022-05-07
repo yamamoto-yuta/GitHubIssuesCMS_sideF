@@ -80,6 +80,7 @@ export default function SideBar({
           <Profile
             author_name={author_name}
             author_description={author_description}
+            url_subpath={profile.url_subpath}
           />
         </ListItem>
         <Divider />
