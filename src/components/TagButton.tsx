@@ -1,4 +1,5 @@
 import { Box, Button } from '@mui/material'
+import Link from 'next/link'
 import { Tag } from '../lib/api'
 import { hex2hsl, hsl2hex, setHsl } from '../lib/colorHsl'
 import theme from '../src/theme'
@@ -39,29 +40,30 @@ return { fg, bg, ol, fgHover, bgHover, olHover }
 export const TagButton = ({ tag }: { tag: Tag }) => {
   const tagColor = tagColorGenerate(tag.color, theme.palette.mode)
   return (
-    <Button
-      href={`/article/tags/${tag.name}`}
-      variant="outlined"
-      size="small"
-      sx={{
-        textTransform: 'none',
-        borderRadius: 2,
-        pt: 0,
-        pb: 0,
-        mt: 0,
-        mb: 0.7,
-        color: `#${tagColor.fg}`,
-        borderColor: `#${tagColor.ol}`,
-        backgroundColor: `#${tagColor.bg}`,
-        '&:hover': {
-          color: `#${tagColor.fgHover}`,
-          borderColor: `#${tagColor.olHover}`,
-          backgroundColor: `#${tagColor.bgHover}`,
-        },
-      }}
-    >
-      {tag.name}
-    </Button>
+    <Link href={`/article/tags/${tag.name}`} passHref>
+      <Button
+        variant="outlined"
+        size="small"
+        sx={{
+          textTransform: 'none',
+          borderRadius: 2,
+          pt: 0,
+          pb: 0,
+          mt: 0,
+          mb: 0.7,
+          color: `#${tagColor.fg}`,
+          borderColor: `#${tagColor.ol}`,
+          backgroundColor: `#${tagColor.bg}`,
+          '&:hover': {
+            color: `#${tagColor.fgHover}`,
+            borderColor: `#${tagColor.olHover}`,
+            backgroundColor: `#${tagColor.bgHover}`,
+          },
+        }}
+      >
+        {tag.name}
+      </Button>
+    </Link>
   )
 }
 
