@@ -160,7 +160,7 @@ export function getProfileJson() {
   const jsonText = fs.readFileSync(jsonPath, 'utf-8')
   let profile = JSON.parse(jsonText) as ProfileJson
   if (profile.root_url.endsWith("/")){
-      profile = profile.root_url.slice(0, -1)
+      profile.root_url = profile.root_url.slice(0, -1)
   }
   return profile
 }
