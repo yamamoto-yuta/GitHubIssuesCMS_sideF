@@ -88,6 +88,7 @@ const Post: NextPage<Props> = ({
   const { setMetadata } = useContext(ExternalMetadataContext)
   setMetadata(metadata)
 
+  console.log(document.URL)
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
