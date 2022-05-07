@@ -2,10 +2,10 @@ import { Box, Divider } from "@mui/material"
 import {DiscussionEmbed} from "disqus-react"
 import { Post } from "../lib/api"
 
-export const DisqusComments = ({post}: {post: Post}) => {
-    const disqusShortname = "shotarokataoka"
+export const DisqusComments = ({post, root_url, short_name}: {post: Post, root_url: string, short_name: string}) => {
+    const disqusShortname = short_name
     const disqusConfig = {
-      url: `https://shotarokataoka.github.io/article/${post.slug}`,
+      url: `${root_url}/article/${post.slug}`,
       identifier: post.slug, // Single post id
       title: post.title // Single post title
     }
