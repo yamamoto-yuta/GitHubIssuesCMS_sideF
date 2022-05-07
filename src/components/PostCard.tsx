@@ -69,14 +69,13 @@ export const PostCard = ({
   )
 }
 
-export const PostCardBySlug = ({ slug }: { slug: string }) => {
+export const PostCardBySlug = ({ slug, url_subpath }: { slug: string, url_subpath: string }) => {
   const { posts, setPosts } = useContext(PostsContext)
-  const { rootUrl, setRootUrl } = useContext(RootUrlContext)
   const post = posts[slug]
   if (post === null || post === undefined) {
     return <div />
   }
-  return <PostCard {...post} url_subpath={rootUrl.url_subpath} />
+  return <PostCard {...post} url_subpath={url_subpath} />
 }
 
 export const PostCards = ({

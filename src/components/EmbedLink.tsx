@@ -31,7 +31,7 @@ export const EmbedLink = ({ url }: { url: string }) => {
 const PostCardEmbed = ({ url }: { url: string }) => {
   let match = /https?:\/\/shotarokataoka\.github\.io\/article\/(\d+)/g.exec(url)
   if (match != null) {
-    return <PostCardBySlug slug={match[1]} />
+    return <PostCardBySlug slug={match[1]} url_subpath={''}/>
   }
   return <div />
 }
