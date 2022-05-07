@@ -44,6 +44,7 @@ export default function SideBar({
   }
   const author_name: string = profile.author_name
   const author_description: string = profile.author_description
+  const root_url: string = profile.root_url
   const sns_list: { name: string; url: string }[] = profile.sns
   const [state, setState] = React.useState({
     top: false,
@@ -82,16 +83,16 @@ export default function SideBar({
           />
         </ListItem>
         <Divider />
-        <ListItemButton text="Home" href="/">
+        <ListItemButton text="Home" href={`${root_url}/`}>
           <HomeIcon />
         </ListItemButton>
-        <ListItemButton text="Articles" href="/article/list">
+        <ListItemButton text="Articles" href={`${root_url}/article/list`}>
           <ArticleIcon />
         </ListItemButton>
-        <ListItemButton text="Tags" href="/article/tags">
+        <ListItemButton text="Tags" href={`${root_url}/article/tags`}>
           <LocalOfferIcon />
         </ListItemButton>
-        <ListItemButton text="Works" href="/works">
+        <ListItemButton text="Works" href={`${root_url}/works`}>
           <InterestsIcon />
         </ListItemButton>
         <ListItemButton text="Edit page" href={edit_page_url}>

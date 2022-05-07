@@ -152,12 +152,16 @@ export type ProfileJson = {
   author_name: string
   author_description: string
   sns: { name: string; url: string }[]
+  root_url: string
 }
 
 export function getProfileJson() {
   const jsonPath = path.join(process.cwd(), 'consts', 'profile.json')
   const jsonText = fs.readFileSync(jsonPath, 'utf-8')
-  const profile = JSON.parse(jsonText) as ProfileJson
+  let profile = JSON.parse(jsonText) as ProfileJson
+  if (profile.root_url.endWith("/")){
+      profile = profile.root_url.slice(0, -1)
+  }
   return profile
 }
 
