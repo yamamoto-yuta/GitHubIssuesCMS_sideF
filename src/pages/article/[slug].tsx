@@ -106,12 +106,12 @@ const Post: NextPage<Props> = ({
         <meta name="description" content={post.description}/>
         <meta property='og:title' content={`${post.title} | ${profile.blog_title}`}/>
         <meta property='og:description' content={post.description}/>
-        <meta property="og:image" content={`https://shotarokataoka.github.io/static/images/thumbnail/${post.slug}.jpg`} />
+        <meta property="og:image" content={`${profile.root_url}/static/images/thumbnail/${post.slug}.jpg`} />
         <meta property="og:type" content="article"/>
         <meta property="og:site_name" content={profile.blog_title}/>
         <meta property="og:locale" content="ja_JP"/>
-        <meta property="og:url" content={`https://shotarokataoka.github.io/article/${post.slug}`}/>
-        <meta name="twitter:image" content={`https://shotarokataoka.github.io/static/images/thumbnail/${post.slug}.jpg`} />
+        <meta property="og:url" content={`${profile.root_url}/article/${post.slug}`}/>
+        <meta name="twitter:image" content={`${profile.root_url}/static/images/thumbnail/${post.slug}.jpg`} />
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" href="/static/favicon.ico" />
       </Head>
