@@ -159,7 +159,7 @@ export function getProfileJson() {
   const jsonPath = path.join(process.cwd(), 'consts', 'profile.json')
   const jsonText = fs.readFileSync(jsonPath, 'utf-8')
   let profile = JSON.parse(jsonText) as ProfileJson
-  if (profile.root_url.endWith("/")){
+  if (profile.root_url.endsWith("/")){
       profile = profile.root_url.slice(0, -1)
   }
   return profile
