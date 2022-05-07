@@ -9,7 +9,7 @@ import { Box, FormControl, Grid, InputLabel, MenuItem, Select, SelectChangeEvent
 import { CustomPagination } from '../../components/Pagination'
 import { PostCards } from '../../components/PostCard'
 import Copyright from '../../src/Copyright'
-import { PostsContext } from '../_app'
+import { PostsContext, RootUrl, RootUrlContext } from '../_app'
 import { YearSelector } from '../../components/YearSelector'
 import { getNow } from '../../lib/datetime'
 
@@ -26,6 +26,10 @@ const List: NextPage<Props> = ({
   years: string[]
 }) => {
   const [page, setPage] = useState(1)
+
+  const { setRootUrl } = useContext(RootUrlContext)
+  const rootUrl: RootUrl = {root_url: profile.root_url, url_scheme: profile.url_scheme, url_domain: profile.url_domain, url_subpath: profile.url_subpath}
+  setRootUrl(rootUrl)
 
   const [year, setYear] = useState('all');
   const handleChange = (event: SelectChangeEvent) => {

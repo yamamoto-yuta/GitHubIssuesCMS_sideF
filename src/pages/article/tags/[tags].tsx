@@ -17,6 +17,7 @@ import { CustomContainer } from '../../../components/Container'
 import Copyright from '../../../src/Copyright'
 import { YearSelector } from '../../../components/YearSelector'
 import { getNow } from '../../../lib/datetime'
+import { RootUrl, RootUrlContext } from '../../_app'
 
 const postNumPerPage = 14 // １ページあたりの記事数
 
@@ -32,6 +33,11 @@ export default function TagsPosts({
   years: string[]
 }) {
   const title: string = `tag="${tag_name}"`
+
+  const { setRootUrl } = useContext(RootUrlContext)
+  const rootUrl: RootUrl = {root_url: profile.root_url, url_scheme: profile.url_scheme, url_domain: profile.url_domain, url_subpath: profile.url_subpath}
+  setRootUrl(rootUrl)
+
   // Pagenation
   const [page, setPage] = useState(1)
   
