@@ -15,7 +15,7 @@ export const Profile = ({
           <IconButton href="/profile">
             <Avatar
               alt={author_name}
-              src="/static/images/avatar/avatar.jpg"
+              src="/static/images/avatar/avatar.png"
               sx={{ width: 32, height: 32 }}
             />
           </IconButton>
