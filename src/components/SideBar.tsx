@@ -38,9 +38,9 @@ export default function SideBar({
 }) {
   let edit_page_url = ''
   if (slug === undefined) {
-    edit_page_url = 'https://github.com/ShotaroKataoka/githubio-blog-dev/issues'
+    edit_page_url = profile.issues_edit_page
   } else {
-    edit_page_url = `https://github.com/ShotaroKataoka/githubio-blog-dev/issues/${slug}`
+    edit_page_url = `${profile.issues_edit_page}/${slug}`
   }
   const author_name: string = profile.author_name
   const author_description: string = profile.author_description

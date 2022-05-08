@@ -156,6 +156,7 @@ export type ProfileJson = {
   url_scheme: string
   url_domain: string
   url_subpath: string
+  issues_edit_page: string
 }
 
 export function getProfileJson() {
