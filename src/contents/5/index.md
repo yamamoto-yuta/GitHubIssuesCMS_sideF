@@ -5,7 +5,7 @@ slug: '5'
 tag_ids:
 - 4106975999
 title: テスト４
-updated_at: ''
+updated_at: 2022年05月08日 00時04分
 
 ---
 ## title
@@ -13,7 +13,7 @@ content
 
 <p slug=2 basePath="/GitHubIssuesCMS_sideF/"></p>
 
-aaaaaaa #4 
+aaaaaaa [link](/GitHubIssuesCMS_sideF//article/4)
 
 https://shotarokataoka.github.io/GitHubIssuesCMS_sideF/article/3
 
