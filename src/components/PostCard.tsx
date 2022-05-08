@@ -10,7 +10,7 @@ import {
 import { TagButtons } from './TagButton'
 import { Post, Tag } from '../lib/api'
 import { getNow } from '../lib/datetime'
-import { PostsContext, RootUrlContext } from '../pages/_app'
+import { PostsContext } from '../pages/_app'
 import { useContext } from 'react'
 import Link from 'next/link'
 
