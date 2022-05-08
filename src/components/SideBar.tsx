@@ -92,9 +92,6 @@ export default function SideBar({
         <ListItemButton text="Tags" href='/article/tags'>
           <LocalOfferIcon />
         </ListItemButton>
-        <ListItemButton text="Works" href='/works'>
-          <InterestsIcon />
-        </ListItemButton>
         <ListItemButton text="Edit page" href={edit_page_url}>
           <EditIcon />
         </ListItemButton>
