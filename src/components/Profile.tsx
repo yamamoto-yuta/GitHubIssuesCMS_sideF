@@ -19,7 +19,7 @@ export const Profile = ({
             <IconButton>
               <Avatar
                 alt={author_name}
-                src={`${url_subpath}/static/images/avatar/avatar.png`}
+                src={`${url_subpath}/static/images/avatar/avatar.webp`}
                 sx={{ width: 32, height: 32 }}
               />
             </IconButton>
