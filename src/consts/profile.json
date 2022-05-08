@@ -4,7 +4,8 @@
     "author_description": "ENTER_YOUR_SHORT_INTRODUCTION",
     "copylight_name": "ENTER_YOUR_NAME (for copyright component)",
     "copylight_url": "ENTER_YOUR_URL (for copyright component)",
-    "root_url": "https://shotarokataoka.github.io/GitHubIssuesCMS_sideF/",
+    "root_url": "https://shotarokataoka.github.io/GitHubIssuesCMS_sideF",
+    "issues_edit_page": "https://shotarokataoka.github.io/GitHubIssuesCMS_sideF",
     "sns": [
         {
             "name": "GitHub",
@@ -33,5 +34,5 @@
     ],
     "url_scheme": "https",
     "url_domain": "shotarokataoka.github.io",
-    "url_subpath": "/GitHubIssuesCMS_sideF/"
+    "url_subpath": "/GitHubIssuesCMS_sideF"
 }
