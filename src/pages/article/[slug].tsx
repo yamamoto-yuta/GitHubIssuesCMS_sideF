@@ -113,7 +113,7 @@ const Post: NextPage<Props> = ({
         <meta property="og:url" content={`${profile.root_url}/article/${post.slug}`}/>
         <meta name="twitter:image" content={`${profile.root_url}/static/images/thumbnail/${post.slug}.jpg`} />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="icon" href="/static/favicon.ico" />
+        <link rel="icon" href={`${profile.root_url}/static/favicon.ico`} />
       </Head>
       <CustomAppBarWithTitle profile={profile} slug={post.slug} />
       <CustomContainer>

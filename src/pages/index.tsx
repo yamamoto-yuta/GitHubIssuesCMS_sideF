@@ -14,7 +14,7 @@ const Home: NextPage<Props> = ({ profile }: { profile: ProfileJson }) => {
       <Head>
         <title>{`Tags | ${profile.blog_title}`}</title>
         <meta name="description" content={`${profile.blog_title} tag list`} />
-        <link rel="icon" href="/static/favicon.ico" />
+        <link rel="icon" href={`${profile.root_url}/static/favicon.ico`} />
       </Head>
       <CustomAppBarWithTitle profile={profile} />
       <CustomContainer>

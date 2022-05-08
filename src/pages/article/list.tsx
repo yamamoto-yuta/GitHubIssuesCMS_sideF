@@ -44,7 +44,7 @@ const List: NextPage<Props> = ({
           name="description"
           content={`${profile.blog_title} taged article list`}
         />
-        <link rel="icon" href="/static/favicon.ico" />
+        <link rel="icon" href={`${profile.root_url}/static/favicon.ico`} />
       </Head>
       <CustomAppBarWithTitle profile={profile} />
       <CustomContainer>
