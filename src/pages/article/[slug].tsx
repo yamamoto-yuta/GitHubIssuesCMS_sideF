@@ -23,7 +23,7 @@ import { PageTitle } from '../../components/Title'
 import { CustomAppBarWithTitle } from '../../components/AppBar'
 import { CustomContainer } from '../../components/Container'
 import { useContext } from 'react'
-import { ExternalMetadataContext, PostsContext, RootUrl, RootUrlContext } from '../_app'
+import { ExternalMetadataContext, PostsContext } from '../_app'
 import { DisqusComments } from '../../components/Comment'
 import { PostCards } from '../../components/PostCard'
 

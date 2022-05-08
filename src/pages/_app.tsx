@@ -29,28 +29,12 @@ export const ExternalMetadataContext = React.createContext(
   },
 )
 
-export type RootUrl = {
-  root_url: string
-  url_scheme: string
-  url_domain: string
-  url_subpath: string
-}
-
-export const RootUrlContext = React.createContext(
-  {} as {
-    rootUrl: RootUrl
-    setRootUrl: Dispatch<React.SetStateAction<RootUrl>>
-  },
-)
-
 export default function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
   const initPosts: PostsMap = Object.create(null)
   const initMetadata: ExternalMetadata = Object.create(null)
-  const initRootUrl: RootUrl = {root_url: '', url_scheme: '', url_domain: '', url_subpath: ''}
   const [posts, setPosts] = useState(initPosts)
   const [metadata, setMetadata] = useState(initMetadata)
-  const [rootUrl, setRootUrl] = useState(initRootUrl)
   return (
     <CacheProvider value={emotionCache}>
       <Head>
@@ -59,13 +43,11 @@ export default function MyApp(props: MyAppProps) {
       <ThemeProvider theme={theme}>
       {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <RootUrlContext.Provider value={{ rootUrl, setRootUrl }}>
           <ExternalMetadataContext.Provider value={{ metadata, setMetadata }}>
             <PostsContext.Provider value={{ posts, setPosts }}>
               <Component {...pageProps} />
             </PostsContext.Provider>
           </ExternalMetadataContext.Provider>
-        </RootUrlContext.Provider>
       </ThemeProvider>
     </CacheProvider>
   )

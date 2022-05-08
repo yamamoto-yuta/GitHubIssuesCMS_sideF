@@ -1,16 +1,11 @@
-import * as React from 'react'
 import {
   Card,
-  CardContent,
-  CardActions,
   CardMedia,
   Typography,
   Grid,
   Button,
   Box,
   Link,
-  Avatar,
-  CardHeader,
 } from '@mui/material'
 import { ExternalMetadataContext } from '../pages/_app'
 import { useContext } from 'react'

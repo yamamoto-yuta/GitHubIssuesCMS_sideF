@@ -1,6 +1,6 @@
 import { Box, Grid, SelectChangeEvent } from '@mui/material'
 import Head from 'next/head'
-import { useContext, useState } from 'react'
+import { useState } from 'react'
 import { PostCards } from '../../../components/PostCard'
 import { PageTitle } from '../../../components/Title'
 import {
@@ -17,7 +17,6 @@ import { CustomContainer } from '../../../components/Container'
 import Copyright from '../../../src/Copyright'
 import { YearSelector } from '../../../components/YearSelector'
 import { getNow } from '../../../lib/datetime'
-import { RootUrl, RootUrlContext } from '../../_app'
 
 const postNumPerPage = 14 // １ページあたりの記事数
 
