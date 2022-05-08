@@ -7,7 +7,7 @@ let config = {
   reactStrictMode: true,
 }
 
-// ↓ Do not touch this line
-config['basePath'] = '/GitHubIssuesCMS_sideF'
+// ↓ ** Do not touch this line ** ↓
+config['basePath'] = '/'
 
 module.exports = withBundleAnalyzer(config)
