@@ -8,6 +8,6 @@ let config = {
 }
 
 // ↓ ** Do not touch this line ** ↓
-config['basePath'] = ''
+config['basePath'] = '/GitHubIssuesCMS_sideF'
 
 module.exports = withBundleAnalyzer(config)
