@@ -2,9 +2,10 @@
 description: 初投稿の記事の説明文
 posted_at: 2022年05月10日 00時57分
 slug: '2'
-tag_ids: []
+tag_ids:
+- 4113860322
 title: 初投稿
-updated_at: ''
+updated_at: 2022年05月10日 01時01分
 
 ---
 ## 初投稿です
